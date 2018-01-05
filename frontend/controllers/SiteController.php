@@ -73,6 +73,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $news=[];
+        $comments_structure=[];
         $news = News::find()
             ->where(['parent_id'=>0])
             ->orderBy(['created_at' => SORT_ASC])
